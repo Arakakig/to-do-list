@@ -14,18 +14,12 @@ ul{
     background-color: transparent;
 }
 .itemsList{
-    display: flex;
     gap: 10px;
     margin-top: 10px;
     align-items: center;
     justify-content: center;
 }
-.nameItem{
-    width: 200px;
-    align-items: center;
-    display: flex;
 
-}
 .ButtonDelete{
     background-color: red;
     color: #fff;

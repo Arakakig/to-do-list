@@ -9,36 +9,43 @@ import { Component } from '@angular/core';
 })
 
 export class ListComponent {
-   
 
- 
-  public items = ["Teste 1", "teste 2"];
+
+
+  public items = [{texto: "Teste 1", completo: false}, {texto: "teste 2", completo: false}];
   public model = 1;
-  riskItem(item:string){
-    let form = document.getElementById(item)
-    let buttonMark = document.getElementById("ButtonComplete-"+item)
-    if(form!=null&&buttonMark!=null){
-      if(form.classList.contains("risk")){
-        buttonMark.textContent="Concluido";
-        form.classList.remove('risk');
-      }else{
-        buttonMark.textContent="Desmarcar";
-        form.classList.add('risk');
-      }
-    }
+  novaTarefa = '';
 
+  complete(index:number){
+    this.items[index].completo = !this.items[index].completo;
   }
-  deleteItem(item:string){
-    this.items.splice(this.items.indexOf(item),1);
+  // complete(item:string){
+  //   let form = document.getElementById(item)
+  //   let buttonMark = document.getElementById("ButtonComplete-"+item)
+  //   if(form!=null&&buttonMark!=null){
+  //     if(form.classList.contains("risk")){
+  //       buttonMark.textContent="Concluido";
+  //       form.classList.remove('risk');
+  //     }else{
+  //       buttonMark.textContent="Desmarcar";
+  //       form.classList.add('risk');
+  //     }
+  //   }
+  //
+  // }
+
+  deleteItem(index:number){
+    this.items.splice(index,1);
   }
+
   addNew(){
-    let inputValue = (<HTMLInputElement>document.getElementById("inputNew")).value;
-    this.items.push(inputValue);
+    this.items.push({texto: this.novaTarefa, completo: false});
+    this.novaTarefa = '';
   }
-  changeElement(item:string){
-    let inputValue = (<HTMLInputElement>document.getElementById(item)).value;
-    let index = this.items.indexOf(item);
-    this.items[index] = inputValue;
+
+  changeElement($event:Event, index:number){
+    let inputValue = ($event.target as HTMLInputElement).value;
+    this.items[index] = {texto: inputValue, completo: false};
     console.log(this.items);
   }
 

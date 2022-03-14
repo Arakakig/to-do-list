@@ -1,15 +1,15 @@
 <ul>
-    <div *ngFor="let item of items; let i = index" class="itemsList">
-        <input class="nameItem" id={{item}} value={{item}} (change)="changeElement(item)">
-       
-        <button class="ButtonDelete" (click)="deleteItem(item)"> Deletar</button>
-        <button class="ButtonComplete" id="ButtonComplete-{{item}}" (click)="riskItem(item)"> Concluido</button>
-       
+    <div *ngFor="let item of items; let i = index" class="itemsList row">
+        <input class="nameItem col-md-8" [class.risk]="item.completo" [value]="item.texto" (change)="changeElement($event, i)">
+
+        <button class="ButtonDelete" (click)="deleteItem(i)"> Deletar</button>
+        <button class="ButtonComplete" (click)="complete(i)"> {{item.completo ? 'Desmarcar' : 'Concluído'}}</button>
+
     </div>
-    
+
 </ul>
 <div class="inputCss">
-    <input id="inputNew"/> 
+    <input [(ngModel)]="novaTarefa"/>
     <button class="addNew" (click)="addNew()"> Adicionar</button>
 </div>
 <div id="message"></div>
