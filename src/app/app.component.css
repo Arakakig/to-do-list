@@ -3,3 +3,8 @@ h1{
     font-size: 25px;
     font-weight: bold;
 }
+.Title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

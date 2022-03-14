@@ -1,0 +1,15 @@
+<ul>
+    <div *ngFor="let item of items; let i = index" class="itemsList">
+        <input class="nameItem" id={{item}} value={{item}} (change)="changeElement(item)">
+       
+        <button class="ButtonDelete" (click)="deleteItem(item)"> Deletar</button>
+        <button class="ButtonComplete" id="ButtonComplete-{{item}}" (click)="riskItem(item)"> Concluido</button>
+       
+    </div>
+    
+</ul>
+<div class="inputCss">
+    <input id="inputNew"/> 
+    <button class="addNew" (click)="addNew()"> Adicionar</button>
+</div>
+<div id="message"></div>

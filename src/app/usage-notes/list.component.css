@@ -1,0 +1,51 @@
+.inputCss{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+ul{
+    margin-block-start:0;
+    padding-inline-start:0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.nameItem{
+    border:0;
+    background-color: transparent;
+}
+.itemsList{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.nameItem{
+    width: 200px;
+    align-items: center;
+    display: flex;
+
+}
+.ButtonDelete{
+    background-color: red;
+    color: #fff;
+}
+.ButtonComplete{
+    background-color: green;
+    color: #fff;
+}
+button{
+    width: 100px;
+    height: 30px;
+}
+li{
+    font-size: 18px;
+
+}
+input{
+    font-size: 16px;
+    width: 200px;
+}
+.risk{
+    text-decoration: line-through;
+}
